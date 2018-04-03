@@ -1,6 +1,7 @@
 package gruntpie224.exptranslation.proxy;
 
 import gruntpie224.exptranslation.init.ExpTranBlocks;
+import gruntpie224.exptranslation.init.ExpTranItems;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -42,6 +43,6 @@ public class ClientProxy extends CommonProxy{
 	public static void registerModels(ModelRegistryEvent event)
 	{
 		ExpTranBlocks.initModels();
-		//ItemsInit.initModels();
+		ExpTranItems.initModels();
 	}
 }

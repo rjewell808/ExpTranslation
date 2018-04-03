@@ -1,6 +1,7 @@
 package gruntpie224.exptranslation.proxy;
 
 import gruntpie224.exptranslation.init.ExpTranBlocks;
+import gruntpie224.exptranslation.init.ExpTranItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -25,11 +26,14 @@ public class CommonProxy {
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
 	{
 		ExpTranBlocks.initBlocks();
+		ExpTranBlocks.registerBlocks(event);
 	}
 	
 	@SubscribeEvent
 	public static void registerItem(RegistryEvent.Register<Item> event)
 	{
-		
+		ExpTranItems.initItems();
+		ExpTranBlocks.registerBlockItems(event);
+		ExpTranItems.registerItems(event);
 	}
 }
