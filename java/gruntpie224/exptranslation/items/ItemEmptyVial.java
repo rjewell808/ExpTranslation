@@ -44,7 +44,6 @@ public class ItemEmptyVial extends Item{
 	       
         	if (i1 == enchanter && player.experienceTotal > 0)
             {
-        		//par3World.playSoundAtEntity(par2EntityPlayer, "mob.chicken.plop", 0.5F, 0.1F / (itemRand.nextFloat() * 0.4F + 0.8F));
         		if(!worldIn.isRemote)
         		{
 	        		player.getHeldItemMainhand().shrink(1);
@@ -65,14 +64,6 @@ public class ItemEmptyVial extends Item{
         			worldIn.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, d0, d1, d2, 0.0D, 0.35D, 0.0D);
         		}
 			
-        		/*
-        		//par3World.playSoundAtEntity(par2EntityPlayer, "mob.chicken.plop", 0.5F, 0.1F / (itemRand.nextFloat() * 0.3F + 0.8F));
-        		player.getActiveItemStack().shrink(1);
-                par2EntityPlayer.addExperienceLevel(this.explvl * 1);
-                //par2EntityPlayer.addStat(VanillaAchievements.emptyVialACH, 1);
-                par3World.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0+0.725D, d1 + d3, d2 + d4, 0.0D, 0.0D, 0.0D);
-                par3World.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0+0.725D, d1 + d3-0.1D, d2 + d4, 0.0D, 0.0D, 0.0D);
-                */
                 return EnumActionResult.PASS;
             }
             return EnumActionResult.FAIL;
