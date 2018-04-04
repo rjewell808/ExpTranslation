@@ -2,6 +2,7 @@
 
 # 1.2.0 / UNRELEASED
  ### Changed
+- Updated to 1.12.2
 - Experience is now stored by actual experience instead of levels
   - This helps keep the mod balanced with the game
   - You store all of your exp when used
