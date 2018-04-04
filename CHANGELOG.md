@@ -7,6 +7,7 @@
 ### Fixed
 - You can cheat the system by transferring levels quickly
 - You can only craft Empty Vials with wooden oak slabs
+- You can only craft the ExpTranslator with oak logs / white wool
 ### Removed
 - Bulk Vials
 - ExpTranslation creative tab
