@@ -1,0 +1,44 @@
+{
+  "result": {
+    "item": "et:vial_empty",
+	"count": 6
+  },
+  "pattern": [
+    " s ",
+    "g g",
+    " g "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "s": [
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 0
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 1
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 2
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 3
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 4
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 5
+      }
+    ],
+    "g": {
+      "item": "minecraft:glass",
+	  "data": 0
+    }
+  }
+}

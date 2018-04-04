@@ -11,6 +11,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -18,6 +19,7 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -51,40 +53,33 @@ public class ItemVial extends Item{
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {      
-		if(worldIn.isRemote)
-			return EnumActionResult.PASS;
 		
 		if (player.canPlayerEdit(pos, facing, player.getActiveItemStack()))
 	    {
-	    	double d0 = (double)pos.getX() - 0.2D;
-	        double d1 = (double)pos.getY() + 1.4D;
-	        double d2 = (double)pos.getZ() + 0.325D;
-	        double d3 = 0.2199999988079071D;
-	        double d4 = 0.27000001072883606D;
+	    	
+			double d0 = (double)pos.getX() + 0.5D;
+	        double d1 = (double)pos.getY() + 0.8D;
+	        double d2 = (double)pos.getZ() + 0.6D;
 	        Block i1 = worldIn.getBlockState(pos).getBlock();
 	        Block enchanter = ExpTranBlocks.exp_translator;
-	       
-	        if (i1 == enchanter)
+	        ItemStack stack = player.getHeldItemMainhand();
+	        
+	        if (i1 == enchanter && stack.hasTagCompound() && stack.getTagCompound().hasKey("expAmount"))
 	        {
-	            ItemStack stack = player.getHeldItemMainhand();
-
-	            if(stack.hasTagCompound() && stack.getTagCompound().hasKey("expAmount"))
-	            {
+	        	if(!worldIn.isRemote)
+	        	{
 	            	player.addExperience(stack.getTagCompound().getInteger("expAmount"));
 	            	player.getHeldItemMainhand().shrink(1);
-	            }
+		            worldIn.playSound(null, pos, SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 1F, 1F);
+	        	}
+	        	else
+	        	{
+	        		worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+		            worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0, d1 - 0.1D, d2, 0.0D, 0.0D, 0.0D);
+		            worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0, d1 - 0.2D, d2, 0.0D, 0.0D, 0.0D);
+		            worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0, d1 - 0.3D, d2, 0.0D, 0.0D, 0.0D);
+	        	}
 	            
-	            worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0+0.725D, d1 + d3, d2 + d4, 0.0D, 0.0D, 0.0D);
-	            worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0+0.725D, d1 + d3-0.1D, d2 + d4, 0.0D, 0.0D, 0.0D);
-	            worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0+0.725D+0.1D, d1 + d3-0.2D, d2 + d4, 0.0D, 0.0D, 0.0D);
-	            worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0+0.725D-0.2D, d1 + d3-0.3D, d2 + d4, 0.0D, 0.0D, 0.0D);
-	            /*
-	        	//par3World.playSoundAtEntity(par2EntityPlayer, "mob.chicken.plop", 0.5F, 1F);
-	            par1ItemStack.stackSize -= 10;
-	            par2EntityPlayer.addExperienceLevel(this.explvl * 10);
-	            //par2EntityPlayer.addStat(VanillaAchievements.emptyVialACH, 1);
-	            
-	            */
 	            return EnumActionResult.PASS;
 	        }
 	        

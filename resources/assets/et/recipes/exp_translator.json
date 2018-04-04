@@ -1,0 +1,116 @@
+{
+  "result": {
+    "item": "et:exp_translator",
+	"count": 1
+  },
+  "pattern": [
+    "nwn",
+    "ded",
+    "lll"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "l": [
+      {
+        "item": "minecraft:log",
+        "data": 0
+      },
+      {
+        "item": "minecraft:log",
+        "data": 1
+      },
+      {
+        "item": "minecraft:log",
+        "data": 2
+      },
+      {
+        "item": "minecraft:log",
+        "data": 3
+      },
+      {
+        "item": "minecraft:log2",
+        "data": 0
+      },
+      {
+        "item": "minecraft:log2",
+        "data": 1
+      }
+    ],
+    "n": {
+      "item": "minecraft:netherrack",
+	  "data": 0
+    },
+    "w": [
+	{
+		"item": "minecraft:wool",
+		"data": 0
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 1
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 2
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 3
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 4
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 5
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 6
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 7
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 8
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 9
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 10
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 11
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 12
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 13
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 14
+	},
+	{
+		"item": "minecraft:wool",
+		"data": 15
+	}
+	],
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "e": {
+      "item": "minecraft:emerald"
+    }
+  }
+}
