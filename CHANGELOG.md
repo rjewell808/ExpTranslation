@@ -1,5 +1,3 @@
-# Changelog
-
 # 1.2.0 / UNRELEASED
  ### Changed
 - Updated to 1.12.2
@@ -14,7 +12,8 @@
 - ExpTranslation creative tab
 
 # 1.1.0 / 2016-07-15
-- Updated - 1.9.4
+ ### Changed
+- Updated to 1.9.4
 
 # 1.0.0 / 2015-07-12
 - Initial Release
